@@ -1,6 +1,8 @@
 # Virtual Environment
 venv/
 
+.vscode
+
 # Environment variables / secrets
 .env
 env.md
