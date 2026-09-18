@@ -3,5 +3,21 @@
     "python.analysis.extraPaths": [
         "${workspaceFolder}\\venv\\Lib\\site-packages"
     ],
-    "python-envs.defaultEnvManager": "ms-python.python:system"
+    "python-envs.defaultEnvManager": "ms-python.python:system",
+    "sqltools.connections": [
+        {
+            "mysqlOptions": {
+                "authProtocol": "default",
+                "enableSsl": "Disabled"
+            },
+            "ssh": "Disabled",
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 3306,
+            "driver": "MySQL",
+            "name": "Ashfak",
+            "database": "dsapotd",
+            "username": "root"
+        }
+    ]
 }

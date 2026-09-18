@@ -14,7 +14,7 @@ from sqlalchemy import (
 
 from sqlalchemy.orm import relationship
 
-from DSA_POTD_BOT.db.base import Base
+from db.base import Base
 
 
 # ENUMS
@@ -102,12 +102,12 @@ class Questions(Base):
 
     id = Column(Integer, primary_key=True, index=True)
     source = Column(Enum(Source), nullable=False)
-    title = Column(String, nullable=False)
-    url = Column(String, nullable=False)
+    title = Column(String(500), nullable=False)
+    url = Column(String(500), nullable=False)
     difficulty = Column(Enum(Difficulty), nullable=False)
     tags = Column(JSON, nullable=True)
     rating = Column(Integer, nullable=True)
-    external_id = Column(String, unique=True, nullable=True)
+    external_id = Column(String(200), unique=True, nullable=True)
 
     user_question_log = relationship(
         "User_Question_Log",
@@ -154,7 +154,7 @@ class Daily_Question_Log(Base):
     __tablename__ = "daily_question_log"
 
     id = Column(Integer, primary_key=True, index=True)
-    bucket_key = Column(String, nullable=False)
+    bucket_key = Column(String(100), nullable=False)
     question_id = Column(
         Integer,
         ForeignKey("questions.id"),
