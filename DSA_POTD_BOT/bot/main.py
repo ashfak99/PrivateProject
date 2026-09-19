@@ -13,6 +13,8 @@ from aiogram import Bot, Dispatcher
 from aiogram.client.default import DefaultBotProperties
 from aiogram.enums import ParseMode
 
+from aiohttp import web  # 👈 NEW import
+
 from config.settings import settings
 from db.session import engine
 
@@ -51,9 +53,36 @@ def create_dispatcher() -> Dispatcher:
     return dp
 
 
+# ---------------- HTTP SERVER (Render health check) ---------------- #
+
+async def health_check(request: web.Request) -> web.Response:
+    return web.Response(text="OK")
+
+
+async def start_web_server() -> web.AppRunner:
+    """Chhota HTTP server jo Render ke health check ke liye chalta hai."""
+    app = web.Application()
+    app.router.add_get("/", health_check)
+    app.router.add_get("/health", health_check)  # dono routes safe rahenge
+
+    port = int(os.environ.get("PORT", 8080))
+    runner = web.AppRunner(app)
+    await runner.setup()
+    site = web.TCPSite(runner, "0.0.0.0", port)
+    await site.start()
+    logger.info(f"Web server listening on 0.0.0.0:{port}")
+    return runner
+
+
+# ------------------------------------------------------------------- #
+
+
 async def main() -> None:
     bot = create_bot()
     dp = create_dispatcher()
+
+    # ---- Web server start karo (Render ke liye) ----
+    web_runner = await start_web_server()
 
     # ---- Scheduler ----
     setup_jobs(bot)
@@ -68,6 +97,7 @@ async def main() -> None:
         shutdown_scheduler(wait=False)
         await bot.session.close()
         await engine.dispose()
+        await web_runner.cleanup()  # 👈 web server bhi cleanly band karo
         logger.info("Bot stopped.")
 
 
