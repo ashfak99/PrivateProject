@@ -19,6 +19,8 @@ class Settings(BaseSettings):
 
     EVENING_SEND_TIME : str
 
+    TIMEZONE : str
+
     TRIAL_DAYS : int
 
     STARS_PRICE : int
