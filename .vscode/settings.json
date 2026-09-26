@@ -18,6 +18,20 @@
             "name": "Ashfak",
             "database": "dsapotd",
             "username": "root"
+        },
+        {
+            "mysqlOptions": {
+                "authProtocol": "default",
+                "enableSsl": "Disabled"
+            },
+            "ssh": "Disabled",
+            "previewLimit": 50,
+            "server": "mysql-2719654-dsapotdbot.g.aivencloud.com",
+            "port": 23535,
+            "driver": "MySQL",
+            "database": "defaultdb",
+            "username": "avnadmin",
+            "name": "DSA_POTD"
         }
     ]
 }
