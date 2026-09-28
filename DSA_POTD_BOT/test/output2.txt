@@ -1,0 +1,49 @@
+{
+  "candidate": {
+    "name": "Ashfak",
+    "email": "ashfak@gmail.com"
+  },
+  "recommended_roles": [
+    {
+      "job_role": "Backend Developer (Node.js)",
+      "match_percentage": 85,
+      "experience_level": "Fresher / Junior",
+      "why_suitable": "Strong foundation in server‑side JavaScript, experience with Express, MongoDB, and relational SQL databases, plus version control and API testing tools.",
+      "relevant_skills": ["Node.js", "Express", "MongoDB", "SQL", "Git/GitHub", "Postman"],
+      "missing_skills": ["Docker / containerization", "TypeScript", "Unit/Integration testing (Mocha, Jest)", "API security best practices"]
+    },
+    {
+      "job_role": "Full‑Stack Developer (JavaScript Stack)",
+      "match_percentage": 75,
+      "experience_level": "Fresher / Junior",
+      "why_suitable": "Backend competence paired with API tooling provides a good starting point; can quickly learn front‑end libraries.",
+      "relevant_skills": ["Node.js", "Express", "MongoDB", "SQL", "Git/GitHub", "Postman", "Redis"],
+      "missing_skills": ["Front‑end frameworks (React, Vue, Angular)", "HTML/CSS", "State management (Redux, Vuex)", "Build tools (Webpack, Vite)"]
+    },
+    {
+      "job_role": "API / RESTful Services Engineer",
+      "match_percentage": 70,
+      "experience_level": "Fresher / Junior",
+      "why_suitable": "Direct experience building APIs in Express and testing them with Postman; familiar with data storage options.",
+      "relevant_skills": ["Node.js", "Express", "MongoDB", "SQL", "Git/GitHub", "Postman"],
+      "missing_skills": ["OpenAPI/Swagger specification", "API gateway concepts", "Rate limiting & caching (Redis)", "Automated API testing"]
+    },
+    {
+      "job_role": "Junior Database Developer",
+      "match_percentage": 65,
+      "experience_level": "Fresher / Junior",
+      "why_suitable": "Knowledge of both NoSQL (MongoDB) and relational (SQL) databases gives versatility in data design.",
+      "relevant_skills": ["MongoDB", "SQL"],
+      "missing_skills": ["Database design fundamentals", "Query optimization", "Indexing strategies", "ETL concepts"]
+    },
+    {
+      "job_role": "Junior Software Engineer",
+      "match_percentage": 60,
+      "experience_level": "Fresher / Junior",
+      "why_suitable": "Broad programming experience in a modern language stack and familiarity with version control and API testing.",
+      "relevant_skills": ["Node.js", "Express", "MongoDB", "SQL", "Git/GitHub", "Postman", "Redis"],
+      "missing_skills": ["Object‑Oriented Programming fundamentals", "Design patterns", "Unit testing frameworks", "CI/CD pipelines"]
+    }
+  ],
+  "career_summary": "Ashfak is a fresher with a solid JavaScript back‑end skill set, comfortable building APIs and working with both NoSQL and SQL databases. Strength lies in server‑side development and API tooling. Gaining front‑end frameworks, containerization, and deeper database or testing knowledge will broaden job prospects."
+}
